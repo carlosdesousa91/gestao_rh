@@ -14,3 +14,17 @@ django-admin startproject gestao_rh .
 
 #executar projeto
 python manage.py runserver
+
+#criar banco
+python manage.py migrate
+
+#ciar super usuário
+python manage.py createsuperuser
+
+#criar app
+python manage.py startapp
+
+#registrar app
+INSTALLED_APPS = [
+'apps.empresas',
+
