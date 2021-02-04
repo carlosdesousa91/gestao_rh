@@ -28,3 +28,8 @@ python manage.py startapp
 INSTALLED_APPS = [
 'apps.empresas',
 
+#definir model
+
+#importar model
+
+
