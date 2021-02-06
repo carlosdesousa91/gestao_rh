@@ -1,3 +1,4 @@
+####### cria aplicações #######
 #criar venv
  python -m venv venv
 
@@ -18,7 +19,7 @@ python manage.py runserver
 #criar banco
 python manage.py migrate
 
-#ciar super usu�rio
+#ciar super usu�rio
 python manage.py createsuperuser
 
 #criar app
@@ -32,4 +33,23 @@ INSTALLED_APPS = [
 
 #importar model
 
+#git remover arquivos incluidos por engano
+git rm --cache __pycache__ -r
+
+##########views e templates ##########
+
+#definir caminho dos templates
+'DIRS': ['templates'],
+
+#alterar idioma e time zone
+LANGUAGE_CODE = 'pt-br'
+TIME_ZONE = 'America/Sao_Paulo'
+
+#criar template base.html
+
+#criar urls
+
+#criar views
+
+#criar app core
 
