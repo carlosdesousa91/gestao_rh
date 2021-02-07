@@ -53,3 +53,24 @@ TIME_ZONE = 'America/Sao_Paulo'
 
 #criar app core
 
+########## integrar com bootstrap #########
+
+#baixar bootstrap no diretório static
+
+#chamar o template no base.html
+
+# incluir caminho dos arquivo estaticos.
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+########## chamar url account #########
+
+#criar template registration
+
+#criar variavel padrão LOGIN_REDIRECT_URL
+
+#criar login_required no metodo home
+
+#criar variavel padrão LOGOUT_REDIRECT_URL
+
