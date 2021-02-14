@@ -74,3 +74,35 @@ STATICFILES_DIRS = [
 
 #criar variavel padrão LOGOUT_REDIRECT_URL
 
+########## criar crud empresas #########
+
+########## criar crud funcionarios ##########
+
+########## criar crud departamentos ##########
+    #linkar urls
+    #criar views
+    #alterar models
+    #criar templates
+
+######### instalar bootstrap form ##########
+
+pip install django-bootstrap-form
+
+INSTALLED_APPS = (
+    ...
+    'bootstrapform',
+    ...
+)
+# loadbootstrap
+
+######### crud documentos #########
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+########## crud banco de horas ##########
+
+########## Deploy ##########
+
+

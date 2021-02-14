@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 autor: Carlos Araújo de Sousa
 e-mail: carlos.desousa91@outlook.com
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.documentos',
     'apps.registro_hora_extra',
     'apps.core',
+    'bootstrapform',
 ]
 
 MIDDLEWARE = [
@@ -130,6 +131,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 LOGIN_REDIRECT_URL = 'home'
 
