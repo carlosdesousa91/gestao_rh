@@ -121,3 +121,18 @@ pip freeze > requirements.txt
 #clonar projeto para o servidor
 #instalar requirements
 pip install -r requirements.txt
+# instalar uwsgi
+pip install uwsgi
+#criar arquivo de teste e rodar
+uwsgi --http :9090 --wsgi-file foobar.py
+#rodar o projeto com o uwsgi
+uwsgi --http :8080 --wsgi-file gestao_rh/wsgi.py
+#instalar nginx
+sudo apt-get install nginx
+#criar arquivo uwsgi_params dentro da pasta do projeto
+#incluir parametros https://github.com/nginx/nginx/blob/master/conf/uwsgi_params
+#criar arquivo /etc/nginx/sites-available/mysite_nginx.conf
+https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html
+#criar link simbolico em /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/gestao_rh.conf
+
