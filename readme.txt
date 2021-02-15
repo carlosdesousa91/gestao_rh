@@ -135,4 +135,7 @@ sudo apt-get install nginx
 https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html
 #criar link simbolico em /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/gestao_rh.conf
+#criar arquivo static_root
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+python manage.py collectstatic
 
