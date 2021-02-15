@@ -118,3 +118,6 @@ python -m venv venv
 source venv/bin/activate
 #gerar requirements
 pip freeze > requirements.txt
+#clonar projeto para o servidor
+#instalar requirements
+pip install -r requirements.txt
