@@ -105,4 +105,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 ########## Deploy ##########
 
+#criar vm na AWS
 
+#configurar maquina
+ssh -i "gestao_rh.pem" ubuntu@ec2-18-228-165-176.sa-east-1.compute.amazonaws.com
+sudo apt-get update && sudo apt-get upgrade
+#instalar venv
+apt-get install python3-venv
+#criar venv
+python -m venv venv
+#ativar venv
+source venv/bin/activate
+#gerar requirements
+pip freeze > requirements.txt
