@@ -6,6 +6,9 @@
 cd Scripts
 cd bin
 .\activate
+ source ./activate
+ #desativar
+ deactivate
 
 #instalar django na raiz 
 pip install django
@@ -138,4 +141,15 @@ sudo ln -s /etc/nginx/sites-available/gestao_rh.conf
 #criar arquivo static_root
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 python manage.py collectstatic
+#restartar nginx
+sudo /etc/init.d/nginx restart
+#conectar nginx com uwsgi
+uwsgi --socket :8001 --wsgi-file test.py
+uwsgi --socket mysite.sock --module mysite.wsgi --chmod-socket=664
+#criar arquivo mysite_uwsgi.ini
+uwsgi --ini mysite_uwsgi.ini
+#configurar inicialização por systemctl
+https://uwsgi-docs.readthedocs.io/en/latest/Systemd.html
+# deixar o arquivo com permissão 664 uwsgi_gestao_rh.service
+
 
