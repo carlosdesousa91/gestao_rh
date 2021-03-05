@@ -4,20 +4,39 @@
 
 {% block main %}
 
-{{ object.id }}
-
     <form method="post" >
         {% csrf_token %}
         {{ form|bootstrap }}
         <button type="submit">Salvar</button>
     </form>
 
+
     <br>
-    {% if object %}
-    <a href="{% url 'create_documento' object.id %}" class="btn btn-success">Adicionar documento</a>
-    {% endif %}
+    <h3>Documentos</h3>
+    <ul>
     {% for documento in object.documento_set.all %}
 
-        <a href="{{documento.arquivo.url }}">{{documento.descricao}}</a><br>
+        <li>
+            <a href="{{documento.arquivo.url }}">{{documento.descricao}}</a>
+        </li>
     {% endfor %}
+    </ul>
+    {% if object %}
+        <a href="{% url 'create_documento' object.id %}" class="btn btn-success">Adicionar documento</a>
+    {% endif %}
+
+    <br>
+    <h3>Banco de horas</h3>
+    <ul>
+    {% for registro_hora in object.registrohoraextra_set.all %}
+
+        <li>
+           <a href="{% url 'update_hora_extra' registro_hora.id %}">
+               {{registro_hora.motivo}} | {{registro_hora.horas}}
+           </a>
+        </li>
+    {% endfor %}
+    </ul>
+    <h3> total de horas extra {{ object.total_horas_extra }}</h3>
+
 {% endblock %}

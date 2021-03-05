@@ -152,4 +152,11 @@ uwsgi --ini mysite_uwsgi.ini
 https://uwsgi-docs.readthedocs.io/en/latest/Systemd.html
 # deixar o arquivo com permissão 664 uwsgi_gestao_rh.service
 
+#Ajax
+
+#integrar django com jquery
+
+
+
+
 
