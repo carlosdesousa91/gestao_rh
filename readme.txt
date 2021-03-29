@@ -156,6 +156,8 @@ https://uwsgi-docs.readthedocs.io/en/latest/Systemd.html
 
 #integrar django com jquery
 
+#
+
 
 
 

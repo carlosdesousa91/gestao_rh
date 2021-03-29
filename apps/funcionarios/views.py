@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, FileResponse
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import ListView, UpdateView, DeleteView, CreateView, View
+from django.views.generic import ListView, UpdateView, DeleteView, CreateView, View, TemplateView
 from .models import Funcionario
 import io
 from reportlab.pdfgen import canvas
@@ -97,3 +97,19 @@ class Pdf(View):
       'request': request,
     }
     return Render.render('funcionarios/relatorio.html', params, 'myfile')
+
+class Pdf_debug(TemplateView):
+    params = {
+        'today': 'Variavel today',
+        'sales': 'Variavel sales',
+
+    }
+    template_name = 'funcionarios/relatorio.html';
+
+    def get_context_data(self, **kwargs):
+        params = {
+            'today': 'Variavel today',
+            'sales': 'Variavel sales',
+
+        }
+        return params
