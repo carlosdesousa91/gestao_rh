@@ -156,8 +156,13 @@ https://uwsgi-docs.readthedocs.io/en/latest/Systemd.html
 
 #integrar django com jquery
 
-#
-
+#criação de api
+#instalar django rest
+pip install djangorestframework
+#rodar migrate
+#criar arquivo serializers.py na app core
+#criar view e url
+#registrar app no settings
 
 
 
