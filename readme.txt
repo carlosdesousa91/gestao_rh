@@ -164,6 +164,9 @@ pip install djangorestframework
 #criar view e url
 #registrar app no settings
 
+#celery
+https://docs.celeryproject.org/en/stable/django/first-steps-with-django.html
+
 
 
 
