@@ -6,7 +6,7 @@
 cd Scripts
 cd bin
 .\activate
- source ./activate
+ source ./activate <- linux
  #desativar
  deactivate
 
@@ -166,6 +166,12 @@ pip install djangorestframework
 
 #celery
 https://docs.celeryproject.org/en/stable/django/first-steps-with-django.html
+#installar redis
+sudo apt-get install redis
+#verificar status do redis
+sudo /etc/init.d/redis-server status
+#testar celery
+sudo celery -A gestao_rh worker -l info
 
 
 
