@@ -172,7 +172,12 @@ sudo apt-get install redis
 sudo /etc/init.d/redis-server status
 #testar celery
 sudo celery -A gestao_rh worker -l info
+python manage.py shell
+from gestao_rh.celery import debug_task
+debug_task.delay()
 
+#enviar email
+no servidor incluir usuário e senha no arquivo settings.
 
 
 
