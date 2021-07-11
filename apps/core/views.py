@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from apps.funcionarios.models import Funcionario
-from .tasks import send_relatorio
+from apps.core.tasks import send_relatorio
 
 @login_required
 def home(request):
