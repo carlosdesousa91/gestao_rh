@@ -2,22 +2,23 @@
 
 
 {% block main %}
-    Banco de horas<br>
+    Banco de horas:<br>
     {% for registro_he in object_list %}
 
        <a href="{% url 'update_hora_extra_base' registro_he.id %}">
             {{ registro_he }}
-        </a>
+        </a> |
         <a href="{% url 'delete_hora_extra' registro_he.id %}">
             Delete
         </a>
+        <br/>
 
     {% endfor %}
 
     {% if not object_list %}
         Não existem registros de hora extra.
     {% endif %}
-
+    <br/>
     <a href="{% url 'create_hora_extra' %}" class="btn btn-info">Novo</a>
     <a href="{% url 'exportar_csv' %}" class="btn btn-info">Exportar csv</a>
     <a href="{% url 'exportar_excel' %}" class="btn btn-info">Exportar Excel</a>

@@ -172,12 +172,21 @@ sudo apt-get install redis
 sudo /etc/init.d/redis-server status
 #testar celery
 sudo celery -A gestao_rh worker -l info
+windows:
+sudo celery -A gestao_rh worker --pool=solo -l info
+https://github.com/rgl/redis/downloads
+
 python manage.py shell
 from gestao_rh.celery import debug_task
 debug_task.delay()
 
 #enviar email
 no servidor incluir usuário e senha no arquivo settings.
+ativar apps menos seguros google: https://myaccount.google.com/lesssecureapps
+liberar um novo disposito: https://accounts.google.com/DisplayUnlockCaptcha
+
+#tarefa agenda com celery beat
+celery -A gestao_rh beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
 
 
 

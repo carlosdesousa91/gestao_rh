@@ -2,16 +2,16 @@
 
 
 {% block main %}
-    list<br>
+    lista de funcionários:<br>
     {% for funcionario in object_list %}
         <a href="{% url 'update_funcionarios' funcionario.id %}">
             {{ funcionario }}
-        </a>
+        </a> |
         <a href="{% url 'delete_funcionario' funcionario.id %}">Deletar</a><br>
     {% endfor %}
-    <a href="{% url 'create_funcionario' %}" class="btn btn-info">novo</a>
-    <a href="{% url 'relatorio_funcionarios' %}">Relatório funcionarios</a>
-    <a href="{% url 'relatorio_funcionarios_html' %}">Relatório funcionarios Html</a>
+    <a href="{% url 'create_funcionario' %}" class="btn btn-info">novo</a><br/>
+    <a href="{% url 'relatorio_funcionarios' %}">Relatório funcionarios</a> |
+    <a href="{% url 'relatorio_funcionarios_html' %}">Relatório funcionarios Html</a> |
     <a href="{% url 'relatorio_funcionarios_html_debug' %}">Relatório funcionarios Html Debug</a>
 
 {% endblock %}
