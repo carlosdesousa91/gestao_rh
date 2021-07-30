@@ -187,6 +187,11 @@ liberar um novo disposito: https://accounts.google.com/DisplayUnlockCaptcha
 
 #tarefa agenda com celery beat
 celery -A gestao_rh beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+#no linux rodas celery e celery beat juntos
+celery -A gestao_rh worker -B
+
+#incluir celery no systemctl
+
 
 
 
