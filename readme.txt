@@ -1,6 +1,6 @@
 ####### cria aplicações #######
 #criar venv
- python -m venv venv
+python -m venv venv
 
 #ativar venv
 cd Scripts
@@ -191,6 +191,31 @@ celery -A gestao_rh beat -l info --scheduler django_celery_beat.schedulers:Datab
 celery -A gestao_rh worker -B
 
 #incluir celery no systemctl
+
+###### Instalar certificado auto assinado. #####
+# sudo apt-get install openssl
+# which openssl
+# mkdir /usr/local/nginx/ssl
+# openssl req -x509 -nodes -newkey rsa:2048 -keyout cert.key -out cert.crt -days 365
+##https://adrianorosa.com/blog/nginx/configurar-nginx-https-server-com-self-signed-ssl-certificado.html
+
+# configurando multiplos bancos de dados
+
+- migrate com database antigo
+python manage.py migrate --database=antigo
+- criar routers de databases
+DATABASE_ROUTERS = ['gestao_rh.DBRoutes.DBRoutes']
+- django zerar banco
+python manage.py flush
+ - tabela já existi, passar o fake
+ python manage.py migrate --database=antigo --fake
+
+# atualizando banco de dados manualmente
+python manage.py shell
+from apps.empresas.models import *
+Empresa.objects.using('antigo').create(nome='Minha empresa antiga')
+Empresa.objects.all()
+Empresa.objects.using('antigo').all()
 
 
 

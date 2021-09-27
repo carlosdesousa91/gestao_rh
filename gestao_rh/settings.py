@@ -27,7 +27,8 @@ SECRET_KEY = '+=ko3%(02%1u$d@j-$4k(9c8z1t&&@-!cmzq@!aw@o4q=bfay4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.228.165.176', '54.233.129.154', 'localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['18.228.165.176', '54.233.129.154', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_celery_results',
     'django_celery_beat',
+    'apps.app_antigo',
 ]
 
 MIDDLEWARE = [
@@ -90,6 +92,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'antigo': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'dbantigo.sqlite3',
     }
 }
 
@@ -159,3 +165,5 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
+
+DATABASE_ROUTERS = ['gestao_rh.DBRoutes.DBRoutes']
