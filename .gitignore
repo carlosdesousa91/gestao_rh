@@ -5,3 +5,4 @@ gestao_rh/__pycache__
 *.pyc
 gestao_rh.pem
 static
+gestao_rh/local_settings.py
