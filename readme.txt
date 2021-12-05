@@ -6,6 +6,7 @@ python -m venv venv
 cd Scripts
 cd bin
 .\activate
+resolver problema de permissão windows ``` Set-ExecutionPolicy RemoteSigned ```
  source ./activate <- linux
  #desativar
  deactivate
